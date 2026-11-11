@@ -11,6 +11,24 @@ Built with **C++17, OpenGL 3.3 Core Profile and GLSL**, using GLFW for the windo
 
 ---
 
+## Screenshots
+
+| | |
+|---|---|
+| ![Open notebook](docs/screenshots/01-open.jpg) | ![Page turn](docs/screenshots/02-turn.jpg) |
+| **Open notebook** — two-page spread on the desk, lit by the movable light with real-time shadows | **Page turn** — the curved 3D sheet in the middle of the page-turn animation |
+| ![Light and pause](docs/screenshots/13-light-paused.jpg) | ![Text styles](docs/screenshots/11-signed-edit-mode.jpg) |
+| **Movable light + pause** — light rotated to the right (see the compass), shadows follow; animation paused | **Text styling** — mixed ink colours and fonts on one page, with a text selection |
+| ![Fonts and sizes](docs/screenshots/12-pixel-large-small.jpg) | ![Custom cover](docs/screenshots/08-custom-cover.jpg) |
+| **Fonts and sizes** — Pixel font at size L, Classic at size S | **Custom cover** — navy leather, double frame, star emblem, centred title |
+| ![Cover editor](docs/screenshots/07-cover-dialog.jpg) | ![Load book](docs/screenshots/09-load-delete.jpg) |
+| **Cover editor** with live preview | **Load book** — saved books with titles; the red X deletes a book |
+
+*Screenshots were captured automatically on a machine without a GPU (software OpenGL), so the
+FPS counter in them is lower than on real hardware.*
+
+---
+
 ## Course information
 
 | | |
@@ -26,10 +44,10 @@ Built with **C++17, OpenGL 3.3 Core Profile and GLSL**, using GLFW for the windo
 
 | Member | Module | Responsibilities |
 |---|---|---|
-| **Alikhan Faizrakhman** | Camera, scene, mouse input, page text | Model / view / projection matrices, orbit camera (yaw, pitch, zoom, resize-safe aspect ratio), scene composition, particle system, light rotation, animation clock and pause; mouse picking on the page (ray from the inverse view-projection matrix), text selection with mouse and Shift, copy / cut / paste; text rendering (glyph cache, page fonts), procedural paper and cover textures |
-| **Alikhan Kenzhebek** | Pages and book model | Page-curl animation (curved page mesh, smoothstep animation curve, forward / backward page-turn state machine), hierarchical book model (boards, spine, page stack) and desk props; text layout (word wrap, S / M / L page grids), per-character styles, JSON book format with backups; unit tests |
-| **Alexander Tarulin** | Renderer and shaders (headline) | Scene, depth and UI shaders; Blinn-Phong lighting; shadow mapping (depth framebuffer rendered from the light, PCF filtering); back-face culling; wood and leather textures; dialogs for signing, cover editing and loading / deleting books |
-| **Farkhad Imanbayev** | Window and interface | GLFW window and callbacks, keyboard input, typing and deleting text, undo / redo, interface panels and buttons, Read / Edit mode, F1 help, autosave; CMake build, launch scripts and README |
+| **Alikhan Faizrakhman** | Camera, scene, mouse input, page text | Transformation matrices and orbit camera; scene composition, particles, light rotation and pause; mouse picking on the page, text selection and clipboard; glyph rendering and procedural page/cover textures |
+| **Alikhan Kenzhebek** | Pages and book model | Page-curl mesh and smoothstep page-turn animation; hierarchical book model and desk props; word-wrap layout with S/M/L page grids and per-character styles; JSON book format with backups; unit tests |
+| **Alexander Tarulin** | Renderer and shaders (headline) | Scene, depth and UI shaders; Blinn-Phong lighting; shadow mapping with a depth framebuffer and PCF filtering; back-face culling and wood/leather textures; signing, cover and load/delete dialogs |
+| **Farkhad Imanbayev** | Window and interface | GLFW window, callbacks and keyboard input; typing, deleting and undo/redo; interface panels, buttons, Read/Edit mode and F1 help; autosave; CMake build, launch scripts and README |
 
 All four members share responsibility for the headline technique and can explain the shadow-mapping shaders.
 
