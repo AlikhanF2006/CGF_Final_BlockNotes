@@ -26,10 +26,12 @@ Built with **C++17, OpenGL 3.3 Core Profile and GLSL**, using GLFW for the windo
 
 | Member | Module | Responsibilities |
 |---|---|---|
-| **Alikhan Faizrakhman** | Transformations, camera, scene, particles | Model / view / projection matrices, orbit camera (yaw, pitch, zoom, resize-safe aspect ratio), scene composition, particle system, animation clock and pause, mouse picking on the page (ray from the inverse view-projection matrix) |
-| **Alexander Tarulin** | Shaders, lighting, textures | Scene, depth and UI shaders; Blinn-Phong lighting; shadow mapping (depth framebuffer rendered from the light, PCF filtering); movable light; back-face culling; procedural wood, leather, paper and cover textures |
-| **Alikhan Kenzhebek** | Page-curl animation, curves, hierarchy | Curved page mesh, smoothstep animation curve, forward/backward page-turn state machine, hierarchical book model (boards, spine, page stack) and desk props |
-| **Farkhad Imanbayev** | Window, input, text, UI, JSON | GLFW window and callbacks, keyboard and mouse input, text editing with word wrap, selection and clipboard, fonts and glyph rendering, interface panels and dialogs, JSON save/load with backups, unit tests |
+| **Alikhan Faizrakhman** | Camera, scene, mouse input, page text | Model / view / projection matrices, orbit camera (yaw, pitch, zoom, resize-safe aspect ratio), scene composition, particle system, light rotation, animation clock and pause; mouse picking on the page (ray from the inverse view-projection matrix), text selection with mouse and Shift, copy / cut / paste; text rendering (glyph cache, page fonts), procedural paper and cover textures |
+| **Alikhan Kenzhebek** | Pages and book model | Page-curl animation (curved page mesh, smoothstep animation curve, forward / backward page-turn state machine), hierarchical book model (boards, spine, page stack) and desk props; text layout (word wrap, S / M / L page grids), per-character styles, JSON book format with backups; unit tests |
+| **Alexander Tarulin** | Renderer and shaders (headline) | Scene, depth and UI shaders; Blinn-Phong lighting; shadow mapping (depth framebuffer rendered from the light, PCF filtering); back-face culling; wood and leather textures; dialogs for signing, cover editing and loading / deleting books |
+| **Farkhad Imanbayev** | Window and interface | GLFW window and callbacks, keyboard input, typing and deleting text, undo / redo, interface panels and buttons, Read / Edit mode, F1 help, autosave; CMake build, launch scripts and README |
+
+All four members share responsibility for the headline technique and can explain the shadow-mapping shaders.
 
 ---
 
