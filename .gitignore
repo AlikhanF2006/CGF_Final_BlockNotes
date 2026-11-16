@@ -1,0 +1,13 @@
+# Build output and IDE caches
+build/
+build-*/
+out/
+.vs/
+.vscode/
+CMakeSettings.json
+CMakeUserPresets.json
+*.user
+# Notebooks written while testing
+*.json.bak
+*.json.tmp
+smoke-notebook.json
