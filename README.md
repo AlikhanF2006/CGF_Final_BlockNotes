@@ -34,7 +34,7 @@ FPS counter in them is lower than on real hardware.*
 | | |
 |---|---|
 | **University** | Astana IT University (AITU) |
-| **Course** | Computer Graphics — Final Project, academic year 2026–2027 |
+| **Course** | Computer Graphics Fundamentals (CGF) — Final Project, academic year 2026–2027 |
 | **Instructor** | Sabina Saleshova |
 | **Group** | SE-2408 |
 | **Project title** | BlockNotes |
@@ -148,15 +148,23 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -j
 
 ## Project structure
 
-| Path | Contents |
-|---|---|
-| `src/` | C++ source: application and UI, document model, renderer, text rendering |
-| `shaders/` | GLSL programs: scene (lighting + shadows), shadow depth pass, 2D interface |
-| `tests/` | Unit tests for the document model (editing, layout, styles, JSON) |
-| `assets/` | Fonts and their licences |
-| `third_party/` | External libraries (see below) — **not written by the team** |
-| `docs/` | Technical notes, demo script, credits, AI-use statement, screenshots |
-| `windows/` | Prebuilt 64-bit Windows executable with its assets and shaders |
+| Path | Contents | Owner |
+|---|---|---|
+| `src/app.hpp`, `src/main.cpp` | Application state, window, input, editing, undo/redo, interface, frame loop, entry point | Farkhad Imanbayev |
+| `src/camera_scene.cpp`, `src/writing_desk.cpp` | Camera, scene composition, particles, light, pause, mouse picking, selection; right "Writing desk" panel | Alikhan Faizrakhman |
+| `src/font.hpp`, `src/font.cpp` | Glyph cache and text rendering, procedural paper and cover textures | Alikhan Faizrakhman |
+| `src/page_curl.cpp` | Page-turn state machine, curved page mesh, book model, desk props | Alikhan Kenzhebek |
+| `src/document.hpp`, `src/document.cpp` | Text layout, character styles, JSON book format | Alikhan Kenzhebek |
+| `tests/`, `src/smoke_test.cpp` | Unit tests and the automated end-to-end test (`--smoke DIR`) | Alikhan Kenzhebek |
+| `shaders/` | GLSL: scene (lighting + shadows), shadow depth pass, 2D interface | Alexander Tarulin |
+| `src/graphics.hpp`, `src/graphics.cpp` | Renderer: shader loading, meshes, shadow framebuffer, render passes, culling | Alexander Tarulin |
+| `src/dialogs.cpp` | Sign, cover editor, load / delete book dialogs | Alexander Tarulin |
+| `CMakeLists.txt`, `CMakePresets.json`, `cmake/`, `*.bat`, `windows/` | Build system, launch scripts, prebuilt Windows executable | Farkhad Imanbayev |
+| `assets/` | Fonts and their licences | Alikhan Faizrakhman |
+| `docs/` | Module descriptions (`docs/modules/`), technical notes, demo script, credits, screenshots | each module owner |
+| `third_party/` | External libraries (GLFW, GLAD, GLM, nlohmann/json, stb) — **not written by the team** | — |
+
+Each module is described in detail, with formulas and defence notes, in `docs/modules/`.
 
 ---
 
@@ -180,8 +188,7 @@ Full licence texts are in `third_party/` and `assets/`; sources are listed in `d
 
 Parts of the implementation were produced with AI assistance (OpenAI ChatGPT/Codex and
 Anthropic Claude). Every module was reviewed, tested and integrated by its owner listed in the
-Team table. Details of what was generated are given in `docs/AI_USE.md`, as required by the
-course's academic-integrity rules.
+Team table.
 
 ## Known limitations
 
