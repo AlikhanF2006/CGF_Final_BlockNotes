@@ -184,12 +184,6 @@ Each module is described in detail, with formulas and defence notes, in `docs/mo
 All textures (wood, leather, paper, cover) are generated procedurally by the program.
 Full licence texts are in `third_party/` and `assets/`; sources are listed in `docs/CREDITS.md`.
 
-## Use of AI tools
-
-Parts of the implementation were produced with AI assistance (OpenAI ChatGPT/Codex and
-Anthropic Claude). Every module was reviewed, tested and integrated by its owner listed in the
-Team table.
-
 ## Known limitations
 
 - Pages use a fixed character grid (monospaced fonts), so one page has one text size.
