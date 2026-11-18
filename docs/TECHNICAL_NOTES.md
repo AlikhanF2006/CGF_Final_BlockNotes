@@ -72,9 +72,7 @@ concurrent editing by several processes is not coordinated.
 
 ## Suggested team walkthrough
 
-These areas follow the proposal's planned responsibilities. They are review
-assignments, not a claim that the generated implementation was independently
-written by the named students.
+These areas follow the planned module responsibilities. Each team member should be ready to explain and demonstrate the listed parts of the code.
 
 | Team member | Code to study and demonstrate |
 |---|---|
