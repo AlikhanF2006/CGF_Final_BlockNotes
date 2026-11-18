@@ -9,7 +9,7 @@
 | `src/app.hpp` | `struct App`: application state, keyboard input, typing / deleting, undo / redo, saving and autosave, Read/Edit mode, page texture refresh, left panel, header, bottom bar, help screen, frame loop |
 | `src/main.cpp` | Entry point: command-line options (`--file`, `--demo`, `--smoke`), GLFW window and OpenGL 3.3 core context, GLAD loading, input callbacks, main loop, saving on close |
 | `CMakeLists.txt`, `CMakePresets.json`, `cmake/mingw.cmake` | Build: executable, unit tests, copying assets/shaders, Visual Studio presets, MinGW cross-compilation |
-| `BUILD_AND_RUN_WINDOWS.bat`, `START_BLOCKNOTES.bat`, `START_DEMO.bat` | One-click build and launch on Windows |
+| `START_BLOCKNOTES.bat` | One-click launch of the prebuilt executable with the sample book (`--demo`) |
 | `windows/` | Prebuilt 64-bit executable with assets and shaders |
 | `third_party/` | External libraries (GLFW, GLAD, GLM, nlohmann/json, stb) — not team code |
 
@@ -45,7 +45,7 @@ Ctrl+S, 1.5 s after the last edit, before loading another book and when the wind
 saving fails, the window stays open so nothing is lost.
 
 ## Demo checklist
-- Build with `BUILD_AND_RUN_WINDOWS.bat` (or Visual Studio, x64-Release) and run.
+- Run `START_BLOCKNOTES.bat`, or build in Visual Studio (x64-Release) and run.
 - F1 help; type, undo/redo, save; close and reopen — the book is restored.
 - F6 / top-right button: Read mode blocks typing.
 

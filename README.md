@@ -112,7 +112,9 @@ with GCC. The prebuilt `windows/BlockNotes.exe` is built with MinGW-w64.
 
 ### Option 1 — prebuilt executable (no compiler)
 1. Extract the whole project (do not run it from inside the ZIP).
-2. Double-click **`START_DEMO.bat`** (sample notebook) or **`START_BLOCKNOTES.bat`** (blank notebook).
+2. Double-click **`START_BLOCKNOTES.bat`**. The first launch opens the sample book
+   *The explorer's journal*; your changes are saved and restored next time.
+   Press **New book** for an empty notebook.
 
 ### Option 2 — Visual Studio 2022
 1. Install the **Desktop development with C++** workload (includes CMake).
@@ -127,7 +129,7 @@ cmake --build build --config Release
 ctest --test-dir build -C Release --output-on-failure
 .\build\Release\BlockNotes.exe --demo
 ```
-Or simply run **`BUILD_AND_RUN_WINDOWS.bat`**. All dependencies are included in `third_party/`;
+All dependencies are included in `third_party/`;
 nothing is downloaded during the build.
 
 On Linux:
